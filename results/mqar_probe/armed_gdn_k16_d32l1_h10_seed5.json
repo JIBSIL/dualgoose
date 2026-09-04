@@ -1,0 +1,28 @@
+{
+  "label": "armed_gdn",
+  "K": 16,
+  "seed": 5,
+  "seq_len": 40,
+  "d_model": 32,
+  "layers": 1,
+  "params": 26594,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "rebind_accuracy": 0.0234375,
+  "value_marginal_floor": 0.02381,
+  "table_floor": 0.0625,
+  "no_binding_floor": 0.08482,
+  "steps": 4000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 0.00020049343584105372,
+  "eval_accuracy": 1.0,
+  "eval_samples": 2048,
+  "tok_s": 105446,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

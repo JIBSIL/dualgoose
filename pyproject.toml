@@ -1,0 +1,26 @@
+[project]
+name = "dualgoose"
+version = "0.1.0"
+description = "Toy validation scaffold for DualGoose recurrent diffusion denoisers."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=2.0",
+  "pytest>=8.0",
+  "tiktoken>=0.12",
+  "torch>=2.4",
+]
+
+[project.optional-dependencies]
+mamba = [
+  "causal-conv1d>=1.6.1",
+  "mamba-ssm>=2.3.1",
+]
+owt = [
+  "huggingface-hub>=1.0",
+  "pyarrow>=16.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["."]

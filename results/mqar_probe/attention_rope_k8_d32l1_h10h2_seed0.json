@@ -1,0 +1,28 @@
+{
+  "label": "attention_rope",
+  "K": 8,
+  "seed": 0,
+  "seq_len": 24,
+  "d_model": 32,
+  "layers": 1,
+  "params": 22080,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "rebind_accuracy": 0.16943359375,
+  "value_marginal_floor": 0.02,
+  "table_floor": 0.125,
+  "no_binding_floor": 0.1425,
+  "steps": 3000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 5.470848083496094,
+  "eval_accuracy": 0.1630859375,
+  "eval_samples": 2048,
+  "tok_s": 758340,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

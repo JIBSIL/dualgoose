@@ -1,0 +1,24 @@
+{
+  "label": "attention",
+  "seq_len": 128,
+  "pairs": 4,
+  "seed": 0,
+  "d_model": 32,
+  "layers": 1,
+  "params": 26176,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "steps": 2000,
+  "lr": 0.001,
+  "batch": 128,
+  "final_loss": 4.082272529602051,
+  "eval_accuracy": 0.51123046875,
+  "eval_samples": 2048,
+  "tok_s": 1104432,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "label": "armed_rwkv",
+  "group": "S5",
+  "G": 120,
+  "L": 8,
+  "seed": 0,
+  "d_model": 128,
+  "layers": 2,
+  "params": 834560,
+  "steps": 6000,
+  "amp": "fp32",
+  "mamba2_d_state": null,
+  "chance": 0.008333333333333333,
+  "generators": false,
+  "final_loss": 7.4251017570495605,
+  "eval_accuracy": 0.20147705078125,
+  "depth_accuracy": [
+    1.0,
+    0.5273,
+    0.0415,
+    0.0151,
+    0.0073,
+    0.0088,
+    0.0068,
+    0.0049
+  ],
+  "last_depth_accuracy": 0.0049,
+  "tok_s": 26709
+}

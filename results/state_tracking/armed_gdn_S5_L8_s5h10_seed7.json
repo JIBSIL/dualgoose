@@ -1,0 +1,29 @@
+{
+  "label": "armed_gdn",
+  "group": "S5",
+  "G": 120,
+  "L": 8,
+  "seed": 7,
+  "d_model": 128,
+  "layers": 2,
+  "params": 702980,
+  "steps": 6000,
+  "amp": "fp32",
+  "mamba2_d_state": null,
+  "chance": 0.008333333333333333,
+  "generators": false,
+  "final_loss": 7.085629463195801,
+  "eval_accuracy": 0.14349365234375,
+  "depth_accuracy": [
+    1.0,
+    0.0586,
+    0.0161,
+    0.0127,
+    0.0176,
+    0.0181,
+    0.0132,
+    0.0117
+  ],
+  "last_depth_accuracy": 0.0117,
+  "tok_s": 35990
+}

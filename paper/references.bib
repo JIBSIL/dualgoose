@@ -1,0 +1,350 @@
+% ============================================================================
+% References for "Anatomy of Associative Recall in Fixed-State Recurrences"
+%
+% All entries were verified against arxiv.org on 2026-09-04 (titles, author
+% lists, arXiv IDs). One phantom entry from the original 2026-07-10 audit
+% (huang2025revisiting) duplicated okpekpe2025recall and was deleted; the
+% comments on post-cutoff entries record what was checked.
+% ============================================================================
+
+% ---------- Recall in linear attention / SSMs ----------
+
+@article{arora2023zoology,
+  title   = {Zoology: Measuring and Improving Recall in Efficient Language Models},
+  author  = {Arora, Simran and Eyuboglu, Sabri and Timalsina, Aman and Johnson, Isys and Poli, Michael and Zou, James and Rudra, Atri and R{\'e}, Christopher},
+  journal = {arXiv preprint arXiv:2312.04927},
+  year    = {2023}
+}
+
+@article{arora2024based,
+  title   = {Simple Linear Attention Language Models Balance the Recall-Throughput Tradeoff},
+  author  = {Arora, Simran and Eyuboglu, Sabri and Zhang, Michael and Timalsina, Aman and Alberti, Silas and Zinsley, Dylan and Zou, James and Rudra, Atri and R{\'e}, Christopher},
+  journal = {arXiv preprint arXiv:2402.18668},
+  year    = {2024}
+}
+
+@article{arora2024jrt,
+  title   = {Just Read Twice: Closing the Recall Gap for Recurrent Language Models},
+  author  = {Arora, Simran and Timalsina, Aman and Singhal, Aaryan and Eyuboglu, Sabri and Zhao, Xinyi and Rao, Ashish and Rudra, Atri and R{\'e}, Christopher},
+  journal = {arXiv preprint arXiv:2407.05483},
+  year    = {2024}
+}
+
+% Verified 2026-09-04 (arXiv:2505.15105): mechanistic evaluation locating
+% Mamba's induction/recall in the short convolution, not the SSM.
+@article{arora2025convs,
+  title   = {Mechanistic Evaluation of Transformers and State Space Models},
+  author  = {Arora, Aryaman and Rathi, Neil and Selvam, Nikil Roashan and Csord{\'a}s, R{\'o}bert and Jurafsky, Dan and Potts, Christopher},
+  journal = {arXiv preprint arXiv:2505.15105},
+  year    = {2025}
+}
+
+% Verified 2026-09-04 (arXiv:2508.19029): the short conv is dispensable for
+% Mamba associative recall (98% vs 99% without it) once learning rates are
+% tuned; frames recurrent recall failures as learnability effects.
+@article{okpekpe2025recall,
+  title   = {Revisiting Associative Recall in Modern Recurrent Models},
+  author  = {Okpekpe, Destiny and Orvieto, Antonio},
+  journal = {arXiv preprint arXiv:2508.19029},
+  year    = {2025}
+}
+
+% Verified 2026-09-04 (arXiv:2504.19561); no venue is listed on arXiv, so it
+% is cited as a preprint.
+@article{parnichkun2025ess,
+  title   = {Quantifying Memory Utilization with Effective State-Size},
+  author  = {Parnichkun, Rom N. and Tumma, Neehal and Thomas, Armin W. and Moro, Alessandro and An, Qi and Suzuki, Taiji and Yamashita, Atsushi and Poli, Michael and Massaroli, Stefano},
+  journal = {arXiv preprint arXiv:2504.19561},
+  year    = {2025}
+}
+
+% Verified 2026-09-04 (arXiv:2605.06997): documents an SSM ``memory
+% cliff''---KV-cache-free retrieval collapses once the key-value gap exceeds
+% the state's effective horizon; pure Mamba-2 reads near chance on gap
+% retrieval.
+@article{echo2026,
+  title   = {Echo: {KV}-Cache-Free Associative Recall with Spectral {Koopman} Operators},
+  author  = {Sridhar, Anupama and Johansen, Alexander},
+  journal = {arXiv preprint arXiv:2605.06997},
+  year    = {2026}
+}
+
+% Verified 2026-09-04 (arXiv:2507.02782): the ``unexplored states''
+% hypothesis for recurrent length-generalization failures.
+@article{lengthgen2025,
+  title   = {Understanding and Improving Length Generalization in Recurrent Models},
+  author  = {Buitrago Ruiz, Ricardo and Gu, Albert},
+  journal = {arXiv preprint arXiv:2507.02782},
+  year    = {2025}
+}
+
+% ---------- Cells: delta rule, gating, RWKV, Mamba ----------
+
+@article{yang2024deltanet,
+  title   = {Parallelizing Linear Transformers with the Delta Rule over Sequence Length},
+  author  = {Yang, Songlin and Wang, Bailin and Zhang, Yu and Shen, Yikang and Kim, Yoon},
+  journal = {arXiv preprint arXiv:2406.06484},
+  year    = {2024}
+}
+
+@article{yang2024gateddeltanet,
+  title   = {Gated Delta Networks: Improving {Mamba2} with Delta Rule},
+  author  = {Yang, Songlin and Kautz, Jan and Hatamizadeh, Ali},
+  journal = {arXiv preprint arXiv:2412.06464},
+  year    = {2024}
+}
+
+@article{peng2025rwkv7,
+  title   = {{RWKV-7} ``{Goose}'' with Expressive Dynamic State Evolution},
+  author  = {Peng, Bo and Zhang, Ruichong and Goldstein, Daniel and others},
+  journal = {arXiv preprint arXiv:2503.14456},
+  year    = {2025}
+}
+
+@article{gu2023mamba,
+  title   = {Mamba: Linear-Time Sequence Modeling with Selective State Spaces},
+  author  = {Gu, Albert and Dao, Tri},
+  journal = {arXiv preprint arXiv:2312.00752},
+  year    = {2023}
+}
+
+@article{dao2024mamba2,
+  title   = {Transformers are {SSMs}: Generalized Models and Efficient Algorithms Through Structured State Space Duality},
+  author  = {Dao, Tri and Gu, Albert},
+  journal = {arXiv preprint arXiv:2405.21060},
+  year    = {2024}
+}
+
+@article{katharopoulos2020linear,
+  title   = {Transformers are {RNNs}: Fast Autoregressive Transformers with Linear Attention},
+  author  = {Katharopoulos, Angelos and Vyas, Apoorv and Pappas, Nikolaos and Fleuret, Fran{\c{c}}ois},
+  journal = {arXiv preprint arXiv:2006.16236},
+  year    = {2020}
+}
+
+@article{schlag2021fastweight,
+  title   = {Linear Transformers are Secretly Fast Weight Programmers},
+  author  = {Schlag, Imanol and Irie, Kazuki and Schmidhuber, J{\"u}rgen},
+  journal = {arXiv preprint arXiv:2102.11174},
+  year    = {2021}
+}
+
+% Verified 2026-09-04 (arXiv:2510.26692): Kimi Linear / KDA — fine-grained
+% channel-wise forget gate on the delta rule with improved MQAR. arXiv lists
+% the collective ``Kimi Team'' first, then 59 named authors.
+@article{kimilinear2025,
+  title   = {Kimi Linear: An Expressive, Efficient Attention Architecture},
+  author  = {{Kimi Team}},
+  journal = {arXiv preprint arXiv:2510.26692},
+  year    = {2025}
+}
+
+% ---------- Long-context retrieval failures ----------
+
+@article{jelassi2024repeat,
+  title   = {Repeat After Me: Transformers are Better than State Space Models at Copying},
+  author  = {Jelassi, Samy and Brandfonbrener, David and Kakade, Sham M. and Malach, Eran},
+  journal = {arXiv preprint arXiv:2402.01032},
+  year    = {2024}
+}
+
+@article{hsieh2024ruler,
+  title   = {{RULER}: What's the Real Context Size of Your Long-Context Language Models?},
+  author  = {Hsieh, Cheng-Ping and Sun, Simeng and Kriman, Samuel and Acharya, Shantanu and Rekesh, Dima and Jia, Fei and Zhang, Yang and Ginsburg, Boris},
+  journal = {arXiv preprint arXiv:2404.06654},
+  year    = {2024}
+}
+
+@article{benkish2024decimamba,
+  title   = {{DeciMamba}: Exploring the Length Extrapolation Potential of {Mamba}},
+  author  = {Ben-Kish, Assaf and Zimerman, Itamar and Abu-Hussein, Shady and Cohen, Nadav and Globerson, Amir and Wolf, Lior and Giryes, Raja},
+  journal = {arXiv preprint arXiv:2406.14528},
+  year    = {2024}
+}
+
+@article{chen2024stuffedmamba,
+  title   = {Stuffed {Mamba}: State Collapse and State Capacity of {RNN}-Based Long-Context Modeling},
+  author  = {Chen, Yingfa and Zhang, Xinrong and Hu, Shengding and Han, Xu and Liu, Zhiyuan and Sun, Maosong},
+  journal = {arXiv preprint arXiv:2410.07145},
+  year    = {2024}
+}
+
+% ---------- Training-side fixes / curricula ----------
+
+% Verified 2026-09-04 (arXiv:2411.01030); EMNLP 2024.
+@inproceedings{blouir2024birdie,
+  title     = {Birdie: Advancing State Space Models with Reward-Driven Objectives and Curricula},
+  author    = {Blouir, Sam and Smith, Jimmy T.H. and Anastasopoulos, Antonios},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2024}
+}
+
+@article{bengio2009curriculum,
+  title   = {Curriculum Learning},
+  author  = {Bengio, Yoshua and Louradour, J{\'e}r{\^o}me and Collobert, Ronan and Weston, Jason},
+  journal = {Proceedings of ICML},
+  year    = {2009}
+}
+
+% ---------- Diffusion language models ----------
+
+@article{sahoo2024mdlm,
+  title   = {Simple and Effective Masked Diffusion Language Models},
+  author  = {Sahoo, Subham Sekhar and Arriola, Marianne and Schiff, Yair and Gokaslan, Aaron and Marroquin, Edgar and Chiu, Justin T. and Rush, Alexander and Kuleshov, Volodymyr},
+  journal = {arXiv preprint arXiv:2406.07524},
+  year    = {2024}
+}
+
+@article{austin2021d3pm,
+  title   = {Structured Denoising Diffusion Models in Discrete State-Spaces},
+  author  = {Austin, Jacob and Johnson, Daniel D. and Ho, Jonathan and Tarlow, Daniel and van den Berg, Rianne},
+  journal = {arXiv preprint arXiv:2107.03006},
+  year    = {2021}
+}
+
+% Verified 2026-09-04 (arXiv:2511.15927): bidirectional Mamba MDLM denoisers
+% competitive with Transformer DLMs at up to 1.3B with higher throughput.
+@article{singh2025diffumamba,
+  title   = {{DiffuMamba}: High-Throughput Diffusion {LMs} with {Mamba} Backbone},
+  author  = {Singh, Vaibhav and Ostapenko, Oleksiy and No{\"e}l, Pierre-Andr{\'e} and Belilovsky, Eugene and Scholak, Torsten},
+  journal = {arXiv preprint arXiv:2511.15927},
+  year    = {2025}
+}
+
+% Verified 2026-09-04 (arXiv:2605.25969): triplet-block diffusion
+% (bidirectional within blocks) on an RWKV backbone.
+@article{b3drwkv2026,
+  title   = {Triplet-Block Diffusion {RWKV}},
+  author  = {Lin, Ke and Luo, Yiyang and Su, Zhaolong and Song, Yunya and Rao, Anyi},
+  journal = {arXiv preprint arXiv:2605.25969},
+  year    = {2026}
+}
+
+
+% ---------- Distillation / conversion (context only) ----------
+
+
+
+
+% ---------- State tracking (guardrail section) ----------
+
+@article{merrill2024illusion,
+  title   = {The Illusion of State in State-Space Models},
+  author  = {Merrill, William and Petty, Jackson and Sabharwal, Ashish},
+  journal = {arXiv preprint arXiv:2404.08819},
+  year    = {2024}
+}
+
+@article{grazzi2025negative,
+  title   = {Unlocking State-Tracking in Linear {RNNs} Through Negative Eigenvalues},
+  author  = {Grazzi, Riccardo and Siems, Julien and Franke, J{\"o}rg K.H. and Zela, Arber and Hutter, Frank and Pontil, Massimiliano},
+  journal = {arXiv preprint arXiv:2411.12537},
+  year    = {2025}
+}
+
+@article{deletang2023chomsky,
+  title   = {Neural Networks and the {Chomsky} Hierarchy},
+  author  = {Del{\'e}tang, Gr{\'e}goire and Ruoss, Anian and Grau-Moya, Jordi and Genewein, Tim and Wenliang, Li Kevin and Catt, Elliot and Cundy, Chris and Hutter, Marcus and Legg, Shane and Veness, Joel and Ortega, Pedro A.},
+  journal = {arXiv preprint arXiv:2207.02098},
+  year    = {2023}
+}
+
+@article{liu2023shortcuts,
+  title   = {Transformers Learn Shortcuts to Automata},
+  author  = {Liu, Bingbin and Ash, Jordan T. and Goel, Surbhi and Krishnamurthy, Akshay and Zhang, Cyril},
+  journal = {arXiv preprint arXiv:2210.10749},
+  year    = {2023}
+}
+
+% ---------- Evaluation methodology (protocol section) ----------
+
+@article{bachmann2024pitfalls,
+  title   = {The Pitfalls of Next-Token Prediction},
+  author  = {Bachmann, Gregor and Nagarajan, Vaishnavh},
+  journal = {arXiv preprint arXiv:2403.06963},
+  year    = {2024}
+}
+
+@article{holtzman2021surface,
+  title   = {Surface Form Competition: Why the Highest Probability Answer Isn't Always Right},
+  author  = {Holtzman, Ari and West, Peter and Shwartz, Vered and Choi, Yejin and Zettlemoyer, Luke},
+  journal = {arXiv preprint arXiv:2104.08315},
+  year    = {2021}
+}
+
+@article{hewitt2019control,
+  title   = {Designing and Interpreting Probes with Control Tasks},
+  author  = {Hewitt, John and Liang, Percy},
+  journal = {arXiv preprint arXiv:1909.03368},
+  year    = {2019}
+}
+
+% ---------- Misc architecture context ----------
+
+@article{vaswani2017attention,
+  title   = {Attention Is All You Need},
+  author  = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  journal = {Advances in Neural Information Processing Systems},
+  year    = {2017}
+}
+
+@article{sieber2024differences,
+  title   = {Understanding the Differences in Foundation Models: Attention, State Space Models, and Recurrent Neural Networks},
+  author  = {Sieber, Jerome and Alonso, Carmen Amo and Didier, Alexandre and Zeilinger, Melanie N. and Orvieto, Antonio},
+  journal = {arXiv preprint arXiv:2405.15731},
+  year    = {2024}
+}
+
+@article{olsson2022induction,
+  title={In-context Learning and Induction Heads},
+  author={Olsson, Catherine and Elhage, Nelson and Nanda, Neel and Joseph, Nicholas and DasSarma, Nova and Henighan, Tom and Mann, Ben and Askell, Amanda and Bai, Yuntao and Chen, Anna and others},
+  journal={Transformer Circuits Thread},
+  year={2022}
+}
+
+% ---- companion / self-references -------------------------------------------
+@unpublished{dreaminggoose,
+  title  = {{DreamingGoose}: Staged Distillation from Autoregressive Transformers
+            to Bidirectional Recurrent Diffusion Language Models},
+  author = {Boesch, Julian and Wee, Andrew},
+  note   = {Companion preprint},
+  year   = {2026}
+}
+@unpublished{anatomyrecall,
+  title  = {Anatomy of Associative Recall in Fixed-State Recurrences: A
+            Matched-State Decomposition, an Interference Wall, and a Curriculum
+            That Breaks It},
+  author = {Boesch, Julian and Wee, Andrew},
+  note   = {Companion preprint},
+  year   = {2026}
+}
+
+% ---- conversion / diffusion-adaptation line --------------------------------
+@article{goldstein2025radlads,
+  title   = {{RADLADS}: Rapid Attention Distillation to Linear Attention Decoders at Scale},
+  author  = {Goldstein, Daniel and Alcaide, Eric and Lu, Janna and Cheah, Eugene},
+  journal = {arXiv preprint arXiv:2505.03005},
+  year    = {2025}
+}
+@article{gong2025diffullama,
+  title   = {Scaling Diffusion Language Models via Adaptation from Autoregressive Models},
+  author  = {Gong, Shansan and Agarwal, Shivam and Zhang, Yizhe and Ye, Jiacheng and
+             Zheng, Lin and Li, Mukai and An, Chenxin and Zhao, Peilin and Bi, Wei and
+             Han, Jiawei and Peng, Hao and Kong, Lingpeng},
+  journal = {arXiv preprint arXiv:2410.17891},
+  year    = {2025}
+}
+@article{ye2025dream,
+  title   = {Dream 7B: Diffusion Large Language Models},
+  author  = {Ye, Jiacheng and Xie, Zhihui and Zheng, Lin and Gao, Jiahui and
+             Wu, Zirui and Jiang, Xin and Li, Zhenguo and Kong, Lingpeng},
+  journal = {arXiv preprint arXiv:2508.15487},
+  year    = {2025}
+}
+@article{arriola2025bd3lm,
+  title   = {Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models},
+  author  = {Arriola, Marianne and Gokaslan, Aaron and Chiu, Justin T. and Yang, Zhihan and
+             Qi, Zhixuan and Han, Jiaqi and Sahoo, Subham Sekhar and Kuleshov, Volodymyr},
+  journal = {arXiv preprint arXiv:2503.09573},
+  year    = {2025}
+}

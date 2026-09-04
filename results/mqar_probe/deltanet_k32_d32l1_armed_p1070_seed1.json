@@ -1,0 +1,24 @@
+{
+  "label": "deltanet",
+  "K": 32,
+  "seed": 1,
+  "seq_len": 72,
+  "d_model": 32,
+  "layers": 1,
+  "params": 24546,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "steps": 6000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 1.6350921392440796,
+  "eval_accuracy": 0.75341796875,
+  "eval_samples": 2048,
+  "tok_s": 148154,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

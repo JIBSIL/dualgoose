@@ -1,0 +1,24 @@
+{
+  "label": "mamba2_ref",
+  "seq_len": 128,
+  "pairs": 4,
+  "seed": 0,
+  "d_model": 32,
+  "layers": 1,
+  "params": 32000,
+  "mamba2_d_state": 16,
+  "amp": "fp32",
+  "steps": 2000,
+  "lr": 0.001,
+  "batch": 128,
+  "final_loss": 7.977113723754883,
+  "eval_accuracy": 0.0224609375,
+  "eval_samples": 2048,
+  "tok_s": 63183,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

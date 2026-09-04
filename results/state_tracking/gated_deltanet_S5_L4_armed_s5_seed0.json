@@ -1,0 +1,25 @@
+{
+  "label": "gated_deltanet",
+  "group": "S5",
+  "G": 120,
+  "L": 4,
+  "seed": 0,
+  "d_model": 128,
+  "layers": 2,
+  "params": 694276,
+  "steps": 6000,
+  "amp": "fp32",
+  "mamba2_d_state": null,
+  "chance": 0.008333333333333333,
+  "generators": false,
+  "final_loss": 4.20137882232666,
+  "eval_accuracy": 0.5142822265625,
+  "depth_accuracy": [
+    1.0,
+    0.9722,
+    0.0693,
+    0.0156
+  ],
+  "last_depth_accuracy": 0.0156,
+  "tok_s": 14260
+}

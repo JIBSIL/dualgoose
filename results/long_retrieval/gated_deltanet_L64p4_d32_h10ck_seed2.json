@@ -1,0 +1,30 @@
+{
+  "label": "gated_deltanet",
+  "seq_len": 64,
+  "pairs": 4,
+  "seed": 2,
+  "n_queries": 4,
+  "curriculum": true,
+  "collision": true,
+  "curriculum_shape": "uniform",
+  "rebind_accuracy": 0.16748046875,
+  "value_marginal_floor": 0.01852,
+  "d_model": 32,
+  "layers": 2,
+  "params": 47588,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "steps": 3000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 5.795511245727539,
+  "eval_accuracy": 0.1666259765625,
+  "eval_samples": 8192,
+  "tok_s": 51672,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

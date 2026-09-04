@@ -1,0 +1,24 @@
+{
+  "label": "dg_rank_ref",
+  "K": 16,
+  "seed": 2,
+  "seq_len": 40,
+  "d_model": 32,
+  "layers": 1,
+  "params": 29792,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "steps": 4000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 0.0006945963832549751,
+  "eval_accuracy": 1.0,
+  "eval_samples": 2048,
+  "tok_s": 98315,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

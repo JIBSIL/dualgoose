@@ -1,0 +1,30 @@
+{
+  "label": "armed_rwkv",
+  "seq_len": 64,
+  "pairs": 4,
+  "seed": 8,
+  "n_queries": 4,
+  "curriculum": true,
+  "collision": true,
+  "curriculum_shape": "ramp",
+  "rebind_accuracy": 0.060302734375,
+  "value_marginal_floor": 0.01852,
+  "d_model": 32,
+  "layers": 2,
+  "params": 57824,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "steps": 3000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 1.0569103956222534,
+  "eval_accuracy": 0.247802734375,
+  "eval_samples": 8192,
+  "tok_s": 51559,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

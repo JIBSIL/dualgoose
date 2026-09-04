@@ -1,0 +1,24 @@
+{
+  "label": "gated_deltanet",
+  "seq_len": 256,
+  "pairs": 4,
+  "seed": 0,
+  "d_model": 32,
+  "layers": 1,
+  "params": 32546,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "steps": 2000,
+  "lr": 0.001,
+  "batch": 128,
+  "final_loss": 7.975150108337402,
+  "eval_accuracy": 0.0205078125,
+  "eval_samples": 2048,
+  "tok_s": 46862,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}

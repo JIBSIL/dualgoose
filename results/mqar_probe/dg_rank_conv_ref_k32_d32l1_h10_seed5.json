@@ -1,0 +1,28 @@
+{
+  "label": "dg_rank_conv_ref",
+  "K": 32,
+  "seed": 5,
+  "seq_len": 72,
+  "d_model": 32,
+  "layers": 1,
+  "params": 31776,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "rebind_accuracy": 0.04296875,
+  "value_marginal_floor": 0.03846,
+  "table_floor": 0.03125,
+  "no_binding_floor": 0.06851,
+  "steps": 6000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 0.018810324370861053,
+  "eval_accuracy": 0.99169921875,
+  "eval_samples": 2048,
+  "tok_s": 90163,
+  "git": {
+    "commit": "",
+    "branch": "",
+    "dirty": false,
+    "status_short": ""
+  }
+}
