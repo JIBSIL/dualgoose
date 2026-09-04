@@ -1,0 +1,30 @@
+{
+  "label": "mamba2_ref",
+  "seq_len": 128,
+  "pairs": 4,
+  "seed": 0,
+  "n_queries": 1,
+  "curriculum": false,
+  "collision": false,
+  "curriculum_shape": null,
+  "rebind_accuracy": null,
+  "value_marginal_floor": 0.01852,
+  "d_model": 32,
+  "layers": 2,
+  "params": 56736,
+  "mamba2_d_state": 16,
+  "amp": "fp32",
+  "steps": 3000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 7.978201389312744,
+  "eval_accuracy": 0.02294921875,
+  "eval_samples": 2048,
+  "tok_s": 35084,
+  "git": {
+    "commit": "52a36c4",
+    "branch": "main",
+    "dirty": false,
+    "status_short": ""
+  }
+}

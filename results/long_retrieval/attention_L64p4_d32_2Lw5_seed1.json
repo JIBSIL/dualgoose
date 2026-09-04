@@ -1,0 +1,30 @@
+{
+  "label": "attention",
+  "seq_len": 64,
+  "pairs": 4,
+  "seed": 1,
+  "n_queries": 1,
+  "curriculum": false,
+  "collision": false,
+  "curriculum_shape": null,
+  "rebind_accuracy": null,
+  "value_marginal_floor": 0.01852,
+  "d_model": 32,
+  "layers": 2,
+  "params": 43040,
+  "mamba2_d_state": null,
+  "amp": "fp32",
+  "steps": 3000,
+  "lr": 0.001,
+  "batch": 256,
+  "final_loss": 0.00011931161134270951,
+  "eval_accuracy": 1.0,
+  "eval_samples": 2048,
+  "tok_s": 587516,
+  "git": {
+    "commit": "aaa3b36",
+    "branch": "main",
+    "dirty": true,
+    "status_short": "?? docs/mamba2_ampere_plan.md"
+  }
+}
