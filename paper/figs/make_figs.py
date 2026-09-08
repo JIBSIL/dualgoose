@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the two paper figures from the numbers in Tables 1/2/5 (main.tex).
+"""Generate the two paper figures from the hardened numbers (Tables 1/2/5; n=10/20 at K=32).
 
 Fig 1: the three single-knob toggles at K=32 (conv / transition / decay).
 Fig 2: capacity curve (K-sweep) vs. the interference wall and its removal.
@@ -65,12 +65,12 @@ def toggle_panel(ax, groups, title, floor=0.068):
         ax.spines[s].set_visible(False)
 
 toggle_panel(axes[0],
-             [("delta-rule cell", 0.446, 0.993), ("diagonal cell", 0.172, 0.641)],
+             [("delta-rule cell", 0.518, 0.983), ("diagonal cell", 0.151, 0.592)],
              "short conv off $\\rightarrow$ on")
-toggle_panel(axes[1], [("RWKV-7 cell", 0.359, 0.639)],
+toggle_panel(axes[1], [("RWKV-7 cell", 0.390, 0.653)],
              "rank-1 term off $\\rightarrow$ on")
-# decay: 'without' = deltanet 0.769, 'with' = gated_deltanet 0.446
-toggle_panel(axes[2], [("delta-rule cell", 0.769, 0.446)],
+# decay: 'without' = deltanet 0.561 (n=20), 'with' = gated_deltanet 0.518 (n=20)
+toggle_panel(axes[2], [("delta-rule cell", 0.561, 0.518)],
              "decay off $\\rightarrow$ on")
 axes[0].set_ylabel("masked recall @ $K{=}32$")
 axes[0].text(1.72, 0.095, "no-binding\nfloor", fontsize=6.2, color="#999999",
@@ -85,12 +85,12 @@ fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.3, 2.55), width_ratios=[1.15, 1]
 
 K = [8, 16, 32]
 sweep = [  # label, values, color, marker, right-label y-offset
-    ("armed GDN",            [1.000, 1.000, 0.993], "#007A5E", "o",  0.000),
-    ("DeltaNet",             [1.000, 1.000, 0.769], "#0062A3", "s",  0.000),
-    ("Mamba-2 ref",          [1.000, 0.758, 0.641], "#B77800", "^",  0.012),
-    ("Gated DeltaNet",       [1.000, 0.970, 0.446], "#BE4B1A", "D",  0.000),
-    ("RWKV-7 diag ablation", [1.000, 0.835, 0.359], "#A5588E", "v",  0.000),
-    ("Mamba-2 ref, no conv", [0.582, 0.230, 0.172], "#5E5FA8", "x", -0.012),
+    ("armed GDN",            [1.000, 1.000, 0.983], "#007A5E", "o",  0.000),
+    ("DeltaNet",             [1.000, 1.000, 0.561], "#0062A3", "s",  0.000),
+    ("Mamba-2 ref",          [1.000, 0.758, 0.592], "#B77800", "^",  0.012),
+    ("Gated DeltaNet",       [1.000, 0.970, 0.518], "#BE4B1A", "D",  0.000),
+    ("RWKV-7 diag ablation", [1.000, 0.835, 0.390], "#A5588E", "v",  0.000),
+    ("Mamba-2 ref, no conv", [0.582, 0.230, 0.151], "#5E5FA8", "x", -0.012),
 ]
 for label, ys, c, m, dy in sweep:
     axL.plot(K, ys, color=c, lw=1.6, marker=m, ms=3.4,
