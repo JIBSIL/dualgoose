@@ -14,6 +14,7 @@
 % Build: pdflatex dreaminggoose && bibtex dreaminggoose && pdflatex dreaminggoose && pdflatex dreaminggoose
 % ============================================================================
 \documentclass{article}
+\PassOptionsToPackage{hyphens}{url}
 
 \usepackage{microtype}
 \usepackage{graphicx}
@@ -260,6 +261,7 @@ This work used computing resources provided by the Rosen Center for Advanced Com
 \section*{Impact Statement}
 This work concerns making pretrained language models cheaper to re-architect, which lowers the compute cost of deploying capable models and correspondingly lowers the barrier to deploying them without scrutiny. The retrieval boundary we report is also safety-relevant: a converted model can look competent on its training distribution and read at chance just outside it, a failure mode that perplexity-shaped evaluation does not surface.
 
+\setlength{\bibsep}{1pt}
 \bibliographystyle{icml2026}
 \bibliography{references}
 
