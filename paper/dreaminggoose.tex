@@ -48,11 +48,12 @@ to Bidirectional Recurrent Diffusion Language Models}
 \icmlsetsymbol{equal}{*}
 
 \begin{icmlauthorlist}
-\icmlauthor{Julian Boesch}{obit}
-\icmlauthor{Andrew Wee}{obit}
+\icmlauthor{Julian Boesch}{purdue,obit}
+\icmlauthor{Andrew Wee}{purdue,obit}
 \end{icmlauthorlist}
 
-\icmlaffiliation{obit}{Obit Development}
+\icmlaffiliation{purdue}{Purdue University}
+\icmlaffiliation{obit}{Obit Research}
 
 \icmlcorrespondingauthor{Julian Boesch}{jboesch@obitmc.com}
 \icmlcorrespondingauthor{Andrew Wee}{awee@obitmc.com}
@@ -252,6 +253,9 @@ The conversions above use full-sequence masked diffusion. A block-diffusion obje
 
 \section*{Reproducibility Statement}
 Per-arm training telemetry (gate cap, retrieval EMA, avalanche onset), evaluation outputs for every arm including the failed ones, and checkpoints for every arm except the unseeded pilot are retained in object storage. The toy-bench code and results referenced throughout are public at \url{https://github.com/JIBSIL/dualgoose}.
+
+\section*{Acknowledgments}
+This work used computing resources provided by the Rosen Center for Advanced Computing (RCAC) at Purdue University~\citep{McCartney2014}.
 
 \section*{Impact Statement}
 This work concerns making pretrained language models cheaper to re-architect, which lowers the compute cost of deploying capable models and correspondingly lowers the barrier to deploying them without scrutiny. The retrieval boundary we report is also safety-relevant: a converted model can look competent on its training distribution and read at chance just outside it, a failure mode that perplexity-shaped evaluation does not surface.

@@ -57,11 +57,12 @@ A Matched-State Decomposition, an Interference Wall,\\ and a Curriculum That Bre
 \icmlsetsymbol{equal}{*}
 
 \begin{icmlauthorlist}
-\icmlauthor{Julian Boesch}{obit}
-\icmlauthor{Andrew Wee}{obit}
+\icmlauthor{Julian Boesch}{purdue,obit}
+\icmlauthor{Andrew Wee}{purdue,obit}
 \end{icmlauthorlist}
 
-\icmlaffiliation{obit}{Obit Development}
+\icmlaffiliation{purdue}{Purdue University}
+\icmlaffiliation{obit}{Obit Research}
 
 \icmlcorrespondingauthor{Julian Boesch}{jboesch@obitmc.com}
 \icmlcorrespondingauthor{Andrew Wee}{awee@obitmc.com}
@@ -431,6 +432,9 @@ We frame this strictly as \emph{learnability at fixed depth}, not as a circuit-c
 \section*{Reproducibility Statement}
 
 All cells, tasks, and controls run in one open harness (pure-PyTorch reference cells; a state-matched, kernel-free Mamba-2 comparator; fp32 paths) on commodity GPUs, including pre-Volta hardware via an atomic-free two-pass Triton backward (Appendix~\ref{app:harness}). Appendix~\ref{app:commands} lists the exact commands for every table. Code and result JSONs are publicly available at \url{https://github.com/JIBSIL/dualgoose}.
+
+\section*{Acknowledgments}
+This work used computing resources provided by the Rosen Center for Advanced Computing (RCAC) at Purdue University~\citep{McCartney2014}.
 
 \section*{Impact Statement}
 
