@@ -1,7 +1,7 @@
 [project]
 name = "dualgoose"
 version = "0.1.0"
-description = "Toy validation scaffold for DualGoose recurrent diffusion denoisers."
+description = "Recurrent cells, synthetic recall tasks and controls for the DualGoose papers."
 requires-python = ">=3.10"
 dependencies = [
   "numpy>=2.0",
