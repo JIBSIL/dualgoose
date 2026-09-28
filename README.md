@@ -6,7 +6,7 @@ memory ("state") instead of attending over the whole context.
 
 | Paper | Question | PDF |
 |---|---|---|
-| Anatomy of Associative Recall in Fixed-State Recurrences | Why are recurrent layers worse than attention at recalling key-value pairs from their context, and what fixes it? | [`paper/main.pdf`](paper/main.pdf) |
+| Anatomy of Associative Recall in Fixed-State Recurrences | Why are recurrent layers worse than attention at recalling key-value pairs from their context, and what fixes it? | [arXiv:2609.16183](https://arxiv.org/abs/2609.16183), [`paper/main.pdf`](paper/main.pdf) |
 | DreamingGoose | Can a pretrained Transformer be converted into an attention-free, bidirectional diffusion language model, and what survives the conversion? | [`paper/dreaminggoose.pdf`](paper/dreaminggoose.pdf) |
 
 By Julian Boesch and Andrew Wee (Purdue University and Obit Research); DreamingGoose is
@@ -128,8 +128,9 @@ DreamingGoose students use them too. The name records where the project started.
              A Matched-State Decomposition, an Interference Wall, and a
              Curriculum That Breaks It},
   author  = {Boesch, Julian and Wee, Andrew},
-  journal = {arXiv preprint},
-  year    = {2026}
+  journal = {arXiv preprint arXiv:2609.16183},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2609.16183}
 }
 ```
 

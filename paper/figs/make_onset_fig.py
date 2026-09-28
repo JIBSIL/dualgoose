@@ -22,35 +22,40 @@ plt.rcParams.update({
     "axes.labelcolor": "#222222",
 })
 
-# (label, onset in steps, did it lock in, marker) -- all values from the paper.
-# Onsets not stated in the text are omitted rather than guessed.
+# (label, onset in steps -- or the budget for a run that never reached onset, did it
+# lock in, marker, budget) -- all values from the paper. Onsets the text does not state
+# are omitted rather than guessed; every run the text reports as never reaching onset is
+# drawn at its own budget.
 rows = [
-    ("1.7B wikitext",            5_400, True,  "o"),
-    ("1.7B pool-128 (late)",    13_000, True,  "o"),
-    ("8B seed 1",               11_000, True,  "s"),
-    ("8B seed 0",                6_500, True,  "s"),
-    ("8B seed 2",               16_000, False, "s"),   # censored: no onset by 16k
-    ("8B RWKV-7",               16_000, False, "^"),   # censored: no onset by 16k
+    ("1.7B wikitext",               5_400, True,  "o", 16_000),
+    ("1.7B pool-128 (late)",       13_000, True,  "o", 16_000),
+    ("8B seed 1",                  11_000, True,  "s", 16_000),
+    ("8B seed 0",                   6_500, True,  "s", 16_000),
+    ("8B seed 2",                  16_000, False, "s", 16_000),
+    ("8B RWKV-7",                  16_000, False, "^", 16_000),
+    ("1.7B pool-512 (thermostat)", 16_000, False, "o", 16_000),
+    ("8B pool annealing",          24_000, False, "s", 24_000),
 ]
-BUDGET = 16_000
+rows = sorted(rows, key=lambda r: (r[1], r[0]))
 
-fig, ax = plt.subplots(figsize=(3.4, 2.0))
-for i, (lab, x, ok, mk) in enumerate(sorted(rows, key=lambda r: r[1])):
-    censored = not ok
+fig, ax = plt.subplots(figsize=(3.4, 2.35))
+for i, (lab, x, ok, mk, budget) in enumerate(rows):
     ax.plot([x], [i], marker=mk, ms=5.5, mfc=("#3b6ea5" if ok else "white"),
             mec=("#3b6ea5" if ok else "#b03030"), mew=1.3, ls="none", zorder=3)
-    if censored:                      # arrow: onset had not arrived by the budget
-        ax.annotate("", xy=(BUDGET + 2_200, i), xytext=(x + 350, i),
+    if not ok:                        # arrow: onset had not arrived by this run's budget
+        ax.annotate("", xy=(budget + 2_000, i), xytext=(x + 350, i),
                     arrowprops=dict(arrowstyle="->", color="#b03030", lw=1.1))
-        ax.text(BUDGET + 2_450, i, "no onset", fontsize=7, color="#b03030",
+        ax.text(budget + 2_250, i, "no onset", fontsize=7, color="#b03030",
                 ha="left", va="center")
-ax.axvline(BUDGET, color="#888888", lw=0.9, ls="--", zorder=1)
-ax.text(BUDGET - 350, -0.55, "16k budget", fontsize=7.5,
-        color="#666666", ha="right", va="bottom")
+for j, b in enumerate(sorted({r[4] for r in rows})):
+    ax.axvline(b, color="#888888", lw=0.9, ls="--", zorder=1)
+    # first budget labeled left of its line, later ones right of theirs, so labels never collide
+    ax.text(b - 350 if j == 0 else b + 350, -0.55, f"{b // 1000}k budget" if j == 0 else f"{b // 1000}k",
+            fontsize=7.5, color="#666666", ha="right" if j == 0 else "left", va="bottom")
 ax.set_yticks(range(len(rows)))
-ax.set_yticklabels([r[0] for r in sorted(rows, key=lambda r: r[1])], fontsize=7)
+ax.set_yticklabels([r[0] for r in rows], fontsize=7)
 ax.set_xlabel("step of retrieval onset")
-ax.set_xlim(0, 19_500)
+ax.set_xlim(0, 31_000)
 ax.set_ylim(-0.9, len(rows) - 0.35)
 for s in ("top", "right"):
     ax.spines[s].set_visible(False)
